@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_200834) do
     t.bigint "driver_id", null: false
     t.bigint "passenger_id", null: false
     t.bigint "vehicle_id", null: false
+    t.bigint "parking_slot_id", null: false
     t.datetime "ride_date"
     t.text "pickup_location"
     t.text "drop_location"
@@ -71,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_200834) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["driver_id"], name: "index_rides_on_driver_id"
+    t.index ["parking_slot_id"], name: "index_rides_on_parking_slot_id"
     t.index ["passenger_id"], name: "index_rides_on_passenger_id"
     t.index ["vehicle_id"], name: "index_rides_on_vehicle_id"
   end
