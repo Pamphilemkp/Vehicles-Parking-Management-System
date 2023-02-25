@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ride_id: 1
+  driver_id: 1
+  passenger_id: 1
+  vehicle_id: 1
+  ride_date: 2023-02-24 15:08:34
+  pickup_location: MyText
+  drop_location: MyText
+  fare: 9.99
+
+two:
+  ride_id: 1
+  driver_id: 1
+  passenger_id: 1
+  vehicle_id: 1
+  ride_date: 2023-02-24 15:08:34
+  pickup_location: MyText
+  drop_location: MyText
+  fare: 9.99
