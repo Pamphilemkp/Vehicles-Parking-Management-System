@@ -1,1 +1,1 @@
-json.array! @passengers, partial: "passengers/passenger", as: :passenger
+json.array! @passengers, partial: 'passengers/passenger', as: :passenger

@@ -1,5 +1,5 @@
 class PassengersController < ApplicationController
-  before_action :set_passenger, only: %i[ show edit update destroy ]
+  before_action :set_passenger, only: %i[show edit update destroy]
 
   # GET /passengers or /passengers.json
   def index
@@ -7,8 +7,7 @@ class PassengersController < ApplicationController
   end
 
   # GET /passengers/1 or /passengers/1.json
-  def show
-  end
+  def show; end
 
   # GET /passengers/new
   def new
@@ -16,8 +15,7 @@ class PassengersController < ApplicationController
   end
 
   # GET /passengers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /passengers or /passengers.json
   def create
@@ -25,7 +23,7 @@ class PassengersController < ApplicationController
 
     respond_to do |format|
       if @passenger.save
-        format.html { redirect_to passenger_url(@passenger), notice: "Passenger was successfully created." }
+        format.html { redirect_to passenger_url(@passenger), notice: 'Passenger was successfully created.' }
         format.json { render :show, status: :created, location: @passenger }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class PassengersController < ApplicationController
   def update
     respond_to do |format|
       if @passenger.update(passenger_params)
-        format.html { redirect_to passenger_url(@passenger), notice: "Passenger was successfully updated." }
+        format.html { redirect_to passenger_url(@passenger), notice: 'Passenger was successfully updated.' }
         format.json { render :show, status: :ok, location: @passenger }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class PassengersController < ApplicationController
     @passenger.destroy
 
     respond_to do |format|
-      format.html { redirect_to passengers_url, notice: "Passenger was successfully destroyed." }
+      format.html { redirect_to passengers_url, notice: 'Passenger was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_passenger
-      @passenger = Passenger.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def passenger_params
-      params.require(:passenger).permit(:passenger_id, :name, :email, :phone, :address)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_passenger
+    @passenger = Passenger.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def passenger_params
+    params.require(:passenger).permit(:passenger_id, :name, :email, :phone, :address)
+  end
 end

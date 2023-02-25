@@ -1,1 +1,1 @@
-json.array! @rides, partial: "rides/ride", as: :ride
+json.array! @rides, partial: 'rides/ride', as: :ride

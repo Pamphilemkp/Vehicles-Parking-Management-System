@@ -1,45 +1,49 @@
-require "test_helper"
+require 'test_helper'
 
 class ParkingSlotsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @parking_slot = parking_slots(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get parking_slots_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_parking_slot_url
     assert_response :success
   end
 
-  test "should create parking_slot" do
-    assert_difference("ParkingSlot.count") do
-      post parking_slots_url, params: { parking_slot: { availability_status: @parking_slot.availability_status, slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
+  test 'should create parking_slot' do
+    assert_difference('ParkingSlot.count') do
+      post parking_slots_url,
+           params: { parking_slot: { availability_status: @parking_slot.availability_status,
+                                     slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
     end
 
     assert_redirected_to parking_slot_url(ParkingSlot.last)
   end
 
-  test "should show parking_slot" do
+  test 'should show parking_slot' do
     get parking_slot_url(@parking_slot)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_parking_slot_url(@parking_slot)
     assert_response :success
   end
 
-  test "should update parking_slot" do
-    patch parking_slot_url(@parking_slot), params: { parking_slot: { availability_status: @parking_slot.availability_status, slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
+  test 'should update parking_slot' do
+    patch parking_slot_url(@parking_slot),
+          params: { parking_slot: { availability_status: @parking_slot.availability_status,
+                                    slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
     assert_redirected_to parking_slot_url(@parking_slot)
   end
 
-  test "should destroy parking_slot" do
-    assert_difference("ParkingSlot.count", -1) do
+  test 'should destroy parking_slot' do
+    assert_difference('ParkingSlot.count', -1) do
       delete parking_slot_url(@parking_slot)
     end
 

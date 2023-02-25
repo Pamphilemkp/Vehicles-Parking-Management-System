@@ -1,45 +1,45 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class ParkingSlotsTest < ApplicationSystemTestCase
   setup do
     @parking_slot = parking_slots(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit parking_slots_url
-    assert_selector "h1", text: "Parking slots"
+    assert_selector 'h1', text: 'Parking slots'
   end
 
-  test "should create parking slot" do
+  test 'should create parking slot' do
     visit parking_slots_url
-    click_on "New parking slot"
+    click_on 'New parking slot'
 
-    check "Availability status" if @parking_slot.availability_status
-    fill_in "Slot loaction", with: @parking_slot.slot_loaction
-    fill_in "Slot number", with: @parking_slot.slot_number
-    click_on "Create Parking slot"
+    check 'Availability status' if @parking_slot.availability_status
+    fill_in 'Slot loaction', with: @parking_slot.slot_loaction
+    fill_in 'Slot number', with: @parking_slot.slot_number
+    click_on 'Create Parking slot'
 
-    assert_text "Parking slot was successfully created"
-    click_on "Back"
+    assert_text 'Parking slot was successfully created'
+    click_on 'Back'
   end
 
-  test "should update Parking slot" do
+  test 'should update Parking slot' do
     visit parking_slot_url(@parking_slot)
-    click_on "Edit this parking slot", match: :first
+    click_on 'Edit this parking slot', match: :first
 
-    check "Availability status" if @parking_slot.availability_status
-    fill_in "Slot loaction", with: @parking_slot.slot_loaction
-    fill_in "Slot number", with: @parking_slot.slot_number
-    click_on "Update Parking slot"
+    check 'Availability status' if @parking_slot.availability_status
+    fill_in 'Slot loaction', with: @parking_slot.slot_loaction
+    fill_in 'Slot number', with: @parking_slot.slot_number
+    click_on 'Update Parking slot'
 
-    assert_text "Parking slot was successfully updated"
-    click_on "Back"
+    assert_text 'Parking slot was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Parking slot" do
+  test 'should destroy Parking slot' do
     visit parking_slot_url(@parking_slot)
-    click_on "Destroy this parking slot", match: :first
+    click_on 'Destroy this parking slot', match: :first
 
-    assert_text "Parking slot was successfully destroyed"
+    assert_text 'Parking slot was successfully destroyed'
   end
 end
