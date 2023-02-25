@@ -18,8 +18,10 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
   test 'should create vehicle' do
     assert_difference('Vehicle.count') do
       post vehicles_url,
-           params: { vehicle: { category_id: @vehicle.category_id, model: @vehicle.model, owner_name: @vehicle.owner_name,
-                                owner_phone: @vehicle.owner_phone, registration_number: @vehicle.registration_number, vehicle_id: @vehicle.vehicle_id } }
+           params: { vehicle: { category_id: @vehicle.category_id, model: @vehicle.model,
+                                owner_name: @vehicle.owner_name, owner_phone: @vehicle.owner_phone,
+                                registration_number: @vehicle.registration_number,
+                                vehicle_id: @vehicle.vehicle_id } }
     end
 
     assert_redirected_to vehicle_url(Vehicle.last)
@@ -37,8 +39,10 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update vehicle' do
     patch vehicle_url(@vehicle),
-          params: { vehicle: { category_id: @vehicle.category_id, model: @vehicle.model, owner_name: @vehicle.owner_name,
-                               owner_phone: @vehicle.owner_phone, registration_number: @vehicle.registration_number, vehicle_id: @vehicle.vehicle_id } }
+          params: { vehicle: { category_id: @vehicle.category_id, model: @vehicle.model,
+                               owner_name: @vehicle.owner_name, owner_phone: @vehicle.owner_phone,
+                               registration_number: @vehicle.registration_number,
+                               vehicle_id: @vehicle.vehicle_id } }
     assert_redirected_to vehicle_url(@vehicle)
   end
 

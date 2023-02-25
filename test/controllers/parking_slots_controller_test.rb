@@ -19,7 +19,8 @@ class ParkingSlotsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('ParkingSlot.count') do
       post parking_slots_url,
            params: { parking_slot: { availability_status: @parking_slot.availability_status,
-                                     slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
+                                     slot_loaction: @parking_slot.slot_loaction,
+                                     slot_number: @parking_slot.slot_number } }
     end
 
     assert_redirected_to parking_slot_url(ParkingSlot.last)
@@ -38,7 +39,8 @@ class ParkingSlotsControllerTest < ActionDispatch::IntegrationTest
   test 'should update parking_slot' do
     patch parking_slot_url(@parking_slot),
           params: { parking_slot: { availability_status: @parking_slot.availability_status,
-                                    slot_loaction: @parking_slot.slot_loaction, slot_number: @parking_slot.slot_number } }
+                                    slot_loaction: @parking_slot.slot_loaction,
+                                    slot_number: @parking_slot.slot_number } }
     assert_redirected_to parking_slot_url(@parking_slot)
   end
 

@@ -19,7 +19,9 @@ class RidesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Ride.count') do
       post rides_url,
            params: { ride: { driver_id: @ride.driver_id, drop_location: @ride.drop_location, fare: @ride.fare,
-                             passenger_id: @ride.passenger_id, pickup_location: @ride.pickup_location, ride_date: @ride.ride_date, ride_id: @ride.ride_id, vehicle_id: @ride.vehicle_id } }
+                             passenger_id: @ride.passenger_id, pickup_location: @ride.pickup_location,
+                             ride_date: @ride.ride_date,
+                             ride_id: @ride.ride_id, vehicle_id: @ride.vehicle_id } }
     end
 
     assert_redirected_to ride_url(Ride.last)
@@ -38,7 +40,9 @@ class RidesControllerTest < ActionDispatch::IntegrationTest
   test 'should update ride' do
     patch ride_url(@ride),
           params: { ride: { driver_id: @ride.driver_id, drop_location: @ride.drop_location, fare: @ride.fare,
-                            passenger_id: @ride.passenger_id, pickup_location: @ride.pickup_location, ride_date: @ride.ride_date, ride_id: @ride.ride_id, vehicle_id: @ride.vehicle_id } }
+                            passenger_id: @ride.passenger_id, pickup_location: @ride.pickup_location,
+                            ride_date: @ride.ride_date,
+                            ride_id: @ride.ride_id, vehicle_id: @ride.vehicle_id } }
     assert_redirected_to ride_url(@ride)
   end
 

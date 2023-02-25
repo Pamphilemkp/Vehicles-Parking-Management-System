@@ -19,7 +19,8 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Booking.count') do
       post bookings_url,
            params: { booking: { booking_date: @booking.booking_date, booking_id: @booking.booking_id,
-                                drop_location: @booking.drop_location, passenger_id: @booking.passenger_id, pickup_location: @booking.pickup_location, vehicle_id: @booking.vehicle_id } }
+                                drop_location: @booking.drop_location, passenger_id: @booking.passenger_id,
+                                pickup_location: @booking.pickup_location, vehicle_id: @booking.vehicle_id } }
     end
 
     assert_redirected_to booking_url(Booking.last)
@@ -38,7 +39,8 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
   test 'should update booking' do
     patch booking_url(@booking),
           params: { booking: { booking_date: @booking.booking_date, booking_id: @booking.booking_id,
-                               drop_location: @booking.drop_location, passenger_id: @booking.passenger_id, pickup_location: @booking.pickup_location, vehicle_id: @booking.vehicle_id } }
+                               drop_location: @booking.drop_location, passenger_id: @booking.passenger_id,
+                               pickup_location: @booking.pickup_location, vehicle_id: @booking.vehicle_id } }
     assert_redirected_to booking_url(@booking)
   end
 
