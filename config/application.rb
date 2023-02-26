@@ -20,5 +20,16 @@ module VehiclesParkingManagementSystem
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Add fonts to the asset path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    # Include Bootstrap assets in the precompilation list
+    config.assets.precompile += %w( bootstrap.min.css bootstrap.min.js )
   end
 end
