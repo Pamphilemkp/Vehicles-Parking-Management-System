@@ -1,4 +1,5 @@
 class ParkingSlotsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_parking_slot, only: %i[show edit update destroy]
 
   # GET /parking_slots or /parking_slots.json

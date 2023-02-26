@@ -1,4 +1,5 @@
 class RidesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_ride, only: %i[show edit update destroy]
 
   # GET /rides or /rides.json
