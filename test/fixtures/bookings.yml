@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_id: 1
+  passenger_id: 1
+  vehicle_id: 1
+  booking_date: 2023-02-24 14:55:58
+  pickup_location: MyText
+  drop_location: MyText
+
+two:
+  booking_id: 1
+  passenger_id: 1
+  vehicle_id: 1
+  booking_date: 2023-02-24 14:55:58
+  pickup_location: MyText
+  drop_location: MyText

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slot_number: 1
+  slot_loaction: MyString
+  availability_status: false
+
+two:
+  slot_number: 1
+  slot_loaction: MyString
+  availability_status: false
