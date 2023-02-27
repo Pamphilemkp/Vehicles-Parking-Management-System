@@ -16,9 +16,14 @@
     <%= form.number_field :vehicle_id %>
   </div>
 
+    <div>
+    <%= form.label :photo, style: "display: block" %>
+    <%= form.text_field :photo %>
+  </div>
+
   <div>
     <%= form.label :category_id, style: "display: block" %>
-    <%= form.number_field :category_id %>
+    <%= form.collection_select(:category_id, @categories, :id, :name) %>  
   </div>
 
   <div>

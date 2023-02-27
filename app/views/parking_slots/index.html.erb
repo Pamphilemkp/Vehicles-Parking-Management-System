@@ -4,11 +4,22 @@
 
 <div id="parking_slots">
   <% @parking_slots.each do |parking_slot| %>
-    <%= render parking_slot %>
+    <p>Slot number: <%= parking_slot.slot_number %> </p>
+    <p>Slot loaction: <%= parking_slot.slot_loaction %> </p>
+    <p>Availability status: <% if parking_slot.availability_status %>
+       <%= ' free' %>
+    <% else %>
+      <%= ' booked' %>
+    <% end %>
+    
+   </p>
     <p>
       <%= link_to "Show this parking slot", parking_slot %>
+        <%= button_to "Edit this parking slot", edit_parking_slot_path(parking_slot) %> |
+        <%= button_to "Destroy this parking slot", parking_slot, method: :delete %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New parking slot", new_parking_slot_path %>
+<%= button_to "New parking slot", new_parking_slot_path %>
+<%= link_to "Back to dashboard", users_path %>

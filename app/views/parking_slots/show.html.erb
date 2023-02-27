@@ -1,10 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @parking_slot %>
+ <p>Slot number: <%= @parking_slot.slot_number %> </p>
+    <p>Slot loaction: <%= @parking_slot.slot_loaction %> </p>
+    <p>Availability status: <% if @parking_slot.availability_status %>
+       <%= ' free' %>
+    <% else %>
+      <%= ' booked' %>
+    <% end %>
+    
+   </p>
+    <p>
+      <%= link_to "Show this parking slot", @parking_slot %>
+        <%= button_to "Edit this parking slot", edit_parking_slot_path(@parking_slot) %> |
+        <%= button_to "Destroy this parking slot", @parking_slot, method: :delete %>
+    </p>
 
-<div>
-  <%= link_to "Edit this parking slot", edit_parking_slot_path(@parking_slot) %> |
-  <%= link_to "Back to parking slots", parking_slots_path %>
-
-  <%= button_to "Destroy this parking slot", @parking_slot, method: :delete %>
-</div>
+      <%= link_to "Back to dashboard", users_path %>

@@ -4,11 +4,18 @@
 
 <div id="bookings">
   <% @bookings.each do |booking| %>
-    <%= render booking %>
+    <p>Booking number: <%= booking.booking_id %></p>
+    <p>Vehiclule model: <%= booking.vehicle.model %></p>
+     <p>Passenger name: <%= booking.passenger.name %></p>
+     <p>Booking date: <%= booking.booking_date %></p>
+     <p>Pickup location: <%= booking.pickup_location %></p>
+     <p>Drop location: <%= booking.drop_location %></p>
+
     <p>
       <%= link_to "Show this booking", booking %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New booking", new_booking_path %>
+<%= button_to "New booking", new_booking_path %>
+<%= link_to "Back to dashboard", users_path %>

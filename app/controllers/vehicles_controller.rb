@@ -12,6 +12,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/new
   def new
+    @categories = Category.all
     @vehicle = Vehicle.new
   end
 
@@ -20,6 +21,7 @@ class VehiclesController < ApplicationController
 
   # POST /vehicles or /vehicles.json
   def create
+    @categories = Category.all
     @vehicle = Vehicle.new(vehicle_params)
 
     respond_to do |format|
@@ -65,7 +67,7 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:vehicle_id, :category_id, :registration_number, :model, :owner_name,
+    params.require(:vehicle).permit(:vehicle_id, :category_id, :registration_number, :model, :photo, :owner_name,
                                     :owner_phone)
   end
 end

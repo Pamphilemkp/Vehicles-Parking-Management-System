@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+    @cars = Vehicle.all
     @booking = Booking.new
   end
 
@@ -21,6 +22,7 @@ class BookingsController < ApplicationController
   # POST /bookings or /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @cars = Vehicle.all
 
     respond_to do |format|
       if @booking.save

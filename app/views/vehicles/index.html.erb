@@ -4,7 +4,13 @@
 
 <div id="vehicles">
   <% @vehicles.each do |vehicle| %>
-    <%= render vehicle %>
+    <p>vehicle Number: <%=vehicle.vehicle_id %></p>
+    <p>vehicle Model: <%=vehicle.model %></p>
+    <p> <%= image_tag(vehicle.photo, style: "width: 200px; height: 200px;") %></p>
+    <p>category: <%=vehicle.category.name %></p>
+    <p>
+      <%= button_to "Edit this vehicle", edit_vehicle_path(vehicle) %> |
+       <%= button_to "Delete this vehicle", vehicle, method: :delete %></p>
     <p>
       <%= link_to "Show this vehicle", vehicle %>
     </p>

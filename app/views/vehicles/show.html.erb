@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @vehicle %>
-
-<div>
-  <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %> |
-  <%= link_to "Back to vehicles", vehicles_path %>
-
-  <%= button_to "Destroy this vehicle", @vehicle, method: :delete %>
+    <p>Number: <%=@vehicle.vehicle_id %></p>
+    <p>vehicle Model: <%=@vehicle.model %></p>
+    <p>Registration number: <%=@vehicle.registration_number %></p>
+    <p>Owner name: <%=@vehicle.owner_name %></p>
+    <p>Owner phone: <%=@vehicle.owner_phone %></p>
+    <p><%= image_tag(@vehicle.photo, style: "width: 200px; height: 200px;") %></p>
+    <p>category: <%=@vehicle.category.name %></p>
+    <p>
+      <%= button_to "Edit this vehicle", edit_vehicle_path(@vehicle) %> |
+       <%= button_to "Delete this vehicle", @vehicle, method: :delete %></p>
+    <p>
+      <%= link_to "Back to dashboard", users_path %>
+    </p>
 </div>
